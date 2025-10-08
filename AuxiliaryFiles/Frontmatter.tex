@@ -1,0 +1,41 @@
+% !TEX root = ../ArticleTemplate.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%% TABLE OF CONTENTS
+\ifnum\IndexYes=1
+\setlength\columnsep{40pt}
+\makeatletter
+\renewcommand{\tableofcontents}{
+{
+\begin{multicols}{2}
+		\fontsize{10}{14.4}\selectfont 
+	\@starttoc{toc}
+\end{multicols}
+}}
+\makeatother
+
+\contentsmargin{0cm}
+	% TOC Section
+\titlecontents{section}[0pc]
+{\addvspace{8pt}\normalsize\bfseries\thecontentslabel}{\hspace{.5cm}}{}
+{\tiny\color{black!50}\;\;\dotfill\;\normalsize\bfseries\color{black}\PageName\, \thecontentspage}
+    % TOC Subsection
+\titlecontents{subsection}[.5pc]
+{\addvspace{1pt}\bfseries\thecontentslabel\normalfont}{\hspace{.25cm}}{}
+{\tiny\color{black!50}\;\;\dotfill\;\small\color{black}\PageName\, \thecontentspage}
+	% TOC Subsubsection
+\titlecontents{subsubsection}[1pc]
+{\addvspace{1pt}\bfseries\thecontentslabel\normalfont}{\hspace{.25cm}}{}
+{\tiny\color{black!50}\;\;\dotfill\;\small\color{black}\PageName\, \thecontentspage}
+{
+    \let\cleardoublepage\relax
+	\renewcommand\contentsname{}
+    \begin{minipage}[r]{.95\textwidth}\raggedleft
+    \vspace{.5cm}
+    \Large\bfseries\ContentsName
+	\vspace{.5cm}
+    \end{minipage}
+
+	\tableofcontents
+	\vspace{.25cm}
+}
+\fi

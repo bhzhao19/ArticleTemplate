@@ -1,0 +1,33 @@
+\documentclass[12pt]{article}
+
+\usepackage[english]{babel}                 %%%%%%%%%%%%%    (EDIT LANGUAGE)
+\usepackage{Custom}                         %%%%%%%%%%%%%    (EDIT NAMES+ABSTRACT)
+\usepackage{AuxiliaryFiles/AuxiliaryFiles}  %%%%%%%%%%%%%    (DO NOT EDIT)
+\usepackage{Custom-2}                       %%%%%%%%%%%%%%   (EDIT)
+
+\begin{document}
+\newcommand\IndexYes{1}
+    %%%%%%%%%%%%%%%%%%   (IF A TABLE OF CONTENTS IS NOT NEEDED, CHANGE 1 TO 0)
+\newcommand\AbstractYes{1}
+    %%%%%%%%%%%%%%%%%%   (IF AN ABSTRACT IS NOT NEEDED, CHANGE 1 TO 0)
+\input{Structure/Title/Title.tex}   %%%%%%%%%%%%%%%%%%        (EDIT TITLEPAGE)
+
+
+\input{AuxiliaryFiles/Frontmatter}  %%%%%%%%%%%%%%%%%%           (DO NOT EDIT)
+
+\input{Structure/Introduction}      %%%%%%%%%%%%%%%%%%     (EDIT INTRODUCTION)
+
+\input{Structure/Section1}          %%%%%%%%%%%%%%%%%%         (EDIT CHAPTERS)
+\input{Structure/Section2}
+\input{Structure/Section3}
+
+\begin{appendices}               %%%%%%%%%%%%%%%%%%    (COMMENT IF NOT NEEDED)
+\input{AuxiliaryFiles/Appendices}    %%%%%%%%%%%%%%%%%%          (DO NOT EDIT)
+
+\input{Structure/Appendices/Appendix-A}
+\end{appendices}
+
+\newcommand\AnalyticIndexYes{0}
+    %%%%%%%%%%%%%%%%%%   (IF AN ANALYTIC INDEX IS NEEDED, CHANGE 0 TO 1)
+\input{AuxiliaryFiles/Backmatter}    %%%%%%%%%%%%%%%%%%          (DO NOT EDIT)
+\end{document}

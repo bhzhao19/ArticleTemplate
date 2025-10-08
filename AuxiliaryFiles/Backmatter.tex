@@ -1,0 +1,39 @@
+% !TEX root = ../ArticleTemplate.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\let\clearpage\relax
+%%%%%%%%%                       (BIBLIOGRAPHY PAGE FORMAT)
+\fancypagestyle{fancyBibliography}{
+	\renewcommand{\headrulewidth}{0.25pt}
+	\renewcommand{\footrulewidth}{0.25pt}
+	\fancyfoot[LE,RO]{}
+	\fancyhead[LO,RE]{\bf\small \BibliographyName}}
+
+%%%%%%%%%%                      (ANALYTIC INDEX PAGE FORMAT)
+\fancypagestyle{fancyIndex}{
+	\renewcommand{\headrulewidth}{0.25pt}
+	\renewcommand{\footrulewidth}{0.25pt}
+	\fancyhead[L,R]{}
+	\fancyfoot[L,R]{}
+	\fancyfoot[C]{\small\thepage}
+	\fancyfoot[LE,RO]{}
+	\fancyhead[LO,RE]{\bf\small \AnalyticIndexName}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%    (BIBLIOGRAPHY)
+\pagestyle{fancyBibliography}
+    \renewcommand{\refname}{\BibliographyName}
+{
+    \addcontentsline{toc}{section}{\BibliographyName}
+    
+	\nocite{*}
+	\bibliographystyle{unsrtnat}   % Alternatives: amsalpha
+    \bibliography{Structure/Bibliography}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%    (ANALYTIC INDEX)
+ \pagestyle{fancyIndex}
+	\titlespacing*{\section}{0pt}{0\baselineskip}{5\baselineskip}
+    \section*{\AnalyticIndexName}
+    \addcontentsline{toc}{section}{\AnalyticIndexName}
+\vspace{-5.5cm}
+    \printindex
+    \newpage
